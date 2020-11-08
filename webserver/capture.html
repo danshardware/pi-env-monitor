@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Capture [date]</title>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js" integrity="sha512-zO8oeHCxetPn1Hd9PdDleg5Tw1bAaP0YmNvPY8CwcRyUk7d7/+nyElmFrB6f7vg4f7Fv4sui1mcep8RIEShczg==" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+        </header>
+
+        <div class="wrapper">
+            <div class="photo" >
+                <div class="overlay_text">
+                    Date<br/>Time
+                </div>
+            </div>
+            <div class="chart1 data">
+                <div class="icon">
+                    <img src="img/031-celsius.svg" alt="temperature" />
+                </div>
+                <div class="value">
+                    24.5°C (23.1-24.7)
+                </div>
+                <div class="historyChart">
+                    <canvas id="tempChart"></canvas>
+                </div>
+
+            </div>
+            <div class="chart2 data">
+                <div class="icon">
+                    <img src="img/032-humidity.svg" alt="Humidity" />
+                </div>
+                <div class="value">
+                    37.4% (37.2% - 37.9%)
+                </div>
+                <div class="historyChart">
+                    <canvas id="humidityChart"></canvas>
+                </div>
+            </div>
+            <div class="chart3 data">
+                Chart 3
+            </div>
+        </div>
+
+        <footer>
+           <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </footer>
+        <script>
+            function sizeCanvasToParent(a){
+                var canvases = document.querySelectorAll(a);
+                canvases.forEach(canvas => {
+                    // Make it visually fill the positioned parent
+                    canvas.style.width ='100%';
+                    canvas.style.height='100%';
+                    // ...then set the internal size to match
+                    canvas.width  = canvas.offsetWidth;
+                    canvas.height = canvas.offsetHeight;
+                });
+                
+            }
+            sizeCanvasToParent('canvas');
+            var tempChart = document.getElementById('tempChart');
+            var humidityChart = document.getElementById('humidityChart');
+            var options = {
+                type: 'line',
+                responsive: true,
+                maintainAspectRatio: false,
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            };
+            var myChart0 = new Chart(tempChart, options);
+            var myChart1 = new Chart(humidityChart, options);
+            </script>
+    </body>
+</html>
