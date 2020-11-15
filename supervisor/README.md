@@ -10,7 +10,7 @@ This application handles root-level tasks for the application:
 It runs as part of a systemd service
 
 # TODO
-- [ ] Write the sensor data to a series of JSON files in a folder
+- [X] Write the sensor data to a series of JSON files in a folder
 - [x] Create systemd file to start this process
 - [X] Create a command socket that can take REST requests
 - [ ] Allow it to flip into Setup mode and back into client mode
