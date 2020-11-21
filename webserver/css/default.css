@@ -33,7 +33,7 @@ samp {
 .photo {
     grid-column: 1;
     grid-row: 1/4;
-    background-image: url('../img/sample.jpg');
+    background-image: url('/latest.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     padding: 1em;

@@ -9,3 +9,5 @@ fi
 DATECODE=$(date -u +"%Y-%m-%d_%H%M")
 raspistill --nopreview --output "${OUTDIR}/${DATECODE}.jpg"
 curl -s http://localhost:8081/ -o "${OUTDIR}/${DATECODE}.json"
+ln -sf "${OUTDIR}/${DATECODE}.jpg" "${OUTDIR}/latest.jpg"
+ln -sf "${OUTDIR}/${DATECODE}.json" "${OUTDIR}/latest.json"
