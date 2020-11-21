@@ -52,3 +52,7 @@ env
 # IDEs
 .idea
 .vscode
+
+# python
+**/__pycache__
+

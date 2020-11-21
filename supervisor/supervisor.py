@@ -47,7 +47,7 @@ def everySecond():
     pressureSamples.push(data.pressure)
 
     # write it to the display 
-    display.displayStatus(data.temperature, data.temperature, getStatusText())
+    display.displayStatus(data.temperature, data.humidity, getStatusText())
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
