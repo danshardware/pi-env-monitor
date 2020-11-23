@@ -8,6 +8,11 @@ from datetime import datetime
 from datetime import timedelta
 from pathlib import Path
 
+# this is a hack from https://stackoverflow.com/questions/1447287/format-floats-with-standard-json-module 
+# to keep the floats encoded to only 2 digits of precision
+from json import encoder
+encoder.FLOAT_REPR = lambda o: "%.2f" % o
+
 ''' This program grabs the latest n sample files from the given folder and creates 
     Time series data JSON output for temperature, humidity, and pressure '''
 
