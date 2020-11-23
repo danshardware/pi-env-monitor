@@ -82,10 +82,10 @@ def compileTSD(data):
     # sort the input data by timestamps
     data.sort(key=getTimestamp)
 
-    # format for each row is timestamp, temp_last/ave/max/min, humidity_last/ave/max/min, pressure_last/ave/max/min
+    # format for each row is timestamp, image_base, temp_last/ave/max/min, humidity_last/ave/max/min, pressure_last/ave/max/min
     for row in data:
         outputData.append([
-            row["timestamp"], 
+            row["timestamp"], row["image"],
             row["temperature"]["last"], row["temperature"]["avg"], row["temperature"]["max"], row["temperature"]["min"], 
             row["humidity"]["last"], row["humidity"]["avg"], row["humidity"]["max"], row["humidity"]["min"], 
             row["pressure"]["last"], row["pressure"]["avg"], row["pressure"]["max"], row["pressure"]["min"]
