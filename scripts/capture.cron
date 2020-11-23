@@ -1,3 +1,4 @@
 # this file goes in /etc/cron.d
 
-*/5 * * * *	root	/usr/local/bin/capture.sh > /dev/null 2>&1
+#*/5 * * * *	root	/usr/local/bin/capture.sh > /dev/null 2>&1
+*/5 * * * *	pi	/usr/local/bin/capture.sh >> /var/log/captures.log 2>&1

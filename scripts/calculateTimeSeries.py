@@ -129,7 +129,7 @@ if __name__ == "__main__":
     else:
         try:
 
-            with open(Path(outFile)) as f:
+            with open(outFile, "w+") as f:
                 json.dump(outputData, f)
                 f.close()
         except Exception as e:
