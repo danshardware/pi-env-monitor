@@ -80,11 +80,11 @@ if __name__ == "__main__":
         elif opt in ("-s", "--suffix"):
             optSuffix = arg
         elif opt in ("-q", "--quality"):
-            optQuality = arg
+            optQuality = int(arg)
         elif opt == '-x':
-            optX = arg
+            optX = float(arg)
         elif opt == '-y':
-            optY = arg
+            optY = float(arg)
         
     for f in args:
         # convert the file to a Path object
